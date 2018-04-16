@@ -1,0 +1,28 @@
+{
+  "name": "fit-fontsize",
+  "version": "1.0.0",
+  "description": "Small library for fitting text perfectly into it's container.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexcambose/fit-fontsize"
+  },
+  "bugs": {
+    "url": "https://github.com/alexcambose/fit-fontsize/issues"
+  },
+  "keywords": [
+    "css",
+    "container",
+    "text",
+    "font-size",
+    "font",
+    "box",
+    "fit",
+    "alignment"
+  ],
+  "author": "Alexandru Cambose",
+  "license": "MIT"
+}

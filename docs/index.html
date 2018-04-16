@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: #fdfdfd;
+        }
+        .content{
+            font-size: 150%;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        
+        <div>
+            <label for="text">Text</label>
+            <textarea v-model="text"></textarea><br>
+            <label for="width">Width (px)</label>
+            <input type="number" id="width" min="10" v-model="box.width"><br>
+            <label for="height">Height (px)</label>
+            <input type="number" id="height" min="10" v-model="box.height"><br>
+            <label for="type">Type:</label>
+            <input type="radio" id="type-both" value="both" v-model="type"> <label for="type-both">Both</label>
+            <input type="radio" id="type-width" value="width" v-model="type"> <label for="type-width">Width</label>   
+            <input type="radio" id="type-height" value="height" v-model="type"> <label for="type-height">Height</label>
+            <br>
+            <label for="mode">Mode:</label>
+            <br>
+            &nbsp; ifParentBigger 
+            <input type="radio" id="pb-yes" v-model="ifParentBigger" :value="true"><label for="pb-yes">True</label>
+            <input type="radio" id="pb-no" v-model="ifParentBigger" :value="false"><label for="pb-no">False</label>
+            <br>
+            &nbsp; ifParentSmaller
+            <input type="radio" id="ps-yes" v-model="ifParentSmaller" :value="true"><label for="ps-yes">True</label>
+            <input type="radio" id="ps-no" v-model="ifParentSmaller" :value="false"><label for="ps-no">False</label>
+        </div>
+        <br>        
+        <div class="box" :style="{height: box.height + 'px', width: box.width + 'px'}">
+            <span class="content" ref="element">{{text}}</span>
+        </div>
+    </div>
+    <div style="height: 200px; width: 200px; border: 1px solid black;">
+        <span fit-fontsize="type: height; ifParentBigger: false">Lorem ipsum dolor sit amet</span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../index.js"></script>
+    <script>
+            const v = new Vue({
+            el: '#app',
+            mounted: function () {
+                this.$nextTick(() => this.watch());
+            },
+            data: {
+                text: 'Lorem ipsum dolor sit amet',
+                box: {
+                    width: 200,
+                    height: 200,
+                },
+                type: 'both',
+                ifParentBigger: true,
+                ifParentSmaller: true,
+                index: null,
+            },
+            watch: {
+                type() { this.watch(); },
+                ifParentBigger() { this.watch(); },
+                ifParentSmaller() { this.watch(); },
+            },
+            methods: { 
+                watch() {
+                    if(this.index !== null) fit.stop(this.index);
+                    this.index = fit.watch(this.$refs.element, this);                    
+                },
+            }
+        });
+    </script>
+</body>
+</html>

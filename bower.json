@@ -1,0 +1,27 @@
+{
+  "name": "fit-fontsize",
+  "description": "Small library for fitting text perfectly into it's container.",
+  "main": "index.js",
+  "authors": [
+    "Alexandru Cambose"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "container",
+    "text",
+    "font-size",
+    "font",
+    "box",
+    "fit",
+    "alignment"
+  ],
+  "homepage": "https://github.com/alexcambose/queryfy",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
