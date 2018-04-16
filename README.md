@@ -1,10 +1,10 @@
 # fit-fontsize
 Small library for fitting text perfectly into it's container.
 
-[**Demo**]()
+[**Demo**](https://alexcambose.github.io/fit-fontsize/)
 
 ## Install
-Install using [npm](https://www.npmjs.com/package/inttorowords)
+Install using [npm](https://www.npmjs.com/package/fit-fontsize)
 ```
 npm install -S fit-fontsize
 ```
@@ -27,7 +27,7 @@ Css like properties can be added to the attribute
 </div>
 ```
 ### Javascript
-```javascript
+```html
 <div style="height: 200px; width: 200px; border: 1px solid black;">
     <span id="element">Lorem ipsum dolor sit amet</span>
 </div>
@@ -36,7 +36,7 @@ Css like properties can be added to the attribute
 </script>
 ```
 Fit only with the width of the parent and also watch for changes.
-```javascript
+```html
 <div style="height: 200px; width: 200px; border: 1px solid black;">
     <span id="element">Lorem ipsum dolor sit amet</span>
 </div>
